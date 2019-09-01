@@ -17,6 +17,6 @@ class HelloWorldButton {
         button.classList.add(this.buttonCssClass);
         body.appendChild(button);
     }
-};
+}
 
 export default HelloWorldButton;

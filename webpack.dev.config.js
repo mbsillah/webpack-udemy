@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,6 +10,11 @@ module.exports = {
         publicPath: ''
     },
     mode: 'development',
+    devServer: {
+        contentBase: path.resolve(__dirname, './build'),
+        index: 'index.html',
+        port: 3000
+    },
     module: {
         rules: [    
             {
@@ -38,7 +43,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: "DIO's World"
         })
